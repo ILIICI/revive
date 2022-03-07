@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>REVIVE.DIGITAL - TECH TEST</title>
+  </head>
+  <body>
+      <p>Bitcoin : <span id="showPrice"></span>  USD</p>
+      
+  </body>
+  <script>
+function updateLatestPrice() {
+  fetch('/update').then(r => r.json()).then(data => document.getElementById("showPrice").innerHTML = data.bitcoin);
+}
+
+setInterval(updateLatestPrice, 500)
+</script>
+</html>
